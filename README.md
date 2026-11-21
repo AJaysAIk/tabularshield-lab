@@ -1,8 +1,14 @@
 # TabularShield Lab
 
+[![Research and API checks](https://github.com/AJaysAIk/tabularshield-lab/actions/workflows/ci.yml/badge.svg)](https://github.com/AJaysAIk/tabularshield-lab/actions)
+
+[![Research and API checks](https://github.com/AJaysAIk/tabularshield-lab/actions/workflows/ci.yml/badge.svg)](https://github.com/AJaysAIk/tabularshield-lab/actions/workflows/ci.yml)
+
 **How much statistical usefulness survives when we try to protect a table?**
 
 An independent, reproducible Python research prototype for **magnitude-table disclosure control**: method comparisons, adversarial reconstruction, geographic diagnostics and a bounded API demonstration.
+
+**Reference evidence:** 3 public datasets · 5,483 records · 27 query workloads · 7 comparators · 30 paired key seeds · 8,100 evaluations. [Verification record](reports/VERIFICATION.md).
 
 Public datasets only. No client data. No Cantabular, Queen's University or statistical-agency affiliation. **Research evidence, not a privacy-certified release system.** Built with AI coding support; see [scope and limitations](docs/limitations.md).
 
@@ -82,4 +88,3 @@ The keyed magnitude prototype uses an illustrative symmetric lookup distribution
 Original project code: MIT. Data remain under their own CC BY 4.0 licences, with attribution in [DATA_SOURCES.md](data/DATA_SOURCES.md). Do not remove data attribution when reusing snapshots or outputs. No third-party implementation code has been copied.
 
 Prepared by Ajay Sai Kummara with AI coding assistance. This repository records software and experimental outputs; it does not attest to independent mastery, employment experience or completed client delivery.
-

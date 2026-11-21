@@ -14,5 +14,3 @@ data/raw/*.zip
 data/raw/cities15000.txt
 reports/coverage.json
 reports/benchmark.json
-reports/reproduction-check.json
-

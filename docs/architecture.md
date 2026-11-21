@@ -27,4 +27,3 @@ Define the host's table-query and release contracts, map contributor units and s
 ## Performance scope
 
 Recorded timings measure local aggregation on actual snapshots. No production concurrency, distributed execution or national-scale latency claim is made. Repeated queries are not independently sampled observations. The API's dataset cache is bounded; dataset refresh requires restart and hash review. Memory grows with table cardinality and dense spatial pairwise distances; large spatial data need a tree index or sparse neighborhood representation.
-

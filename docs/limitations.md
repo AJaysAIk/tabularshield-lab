@@ -20,4 +20,3 @@ This repository is an independently implemented, AI-assisted research prototype.
 ## Before confidential deployment
 
 Obtain a domain-approved threat model and policy, evaluate with representative authorized data, implement calibrated protection and composition controls, commission independent statistical/security review, verify the real platform's release rules and build a monitored operational workflow. These are substantive next stages, not labels this portfolio repository can award itself.
-

@@ -19,4 +19,3 @@
   "uncertainty": "95% t intervals over seed-level workload means, not over cells or population samples",
   "reporting": "All fixed workloads, all comparator results, undefined denominators as N/A, suppression coverage separate from visible error. No selection of a universal best method."
 }
-

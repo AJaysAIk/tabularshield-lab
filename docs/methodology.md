@@ -56,4 +56,3 @@ Aggregate real GeoNames GB settlement records into occupied half-degree cells. E
 - [Cantabular: Python cell-key introduction](https://cantabular.com/blog/demonstrating-cell-key-perturbation-in-python): frequency-table starting point; this work is an independent magnitude-table experiment.
 - [ONS comparison of post-tabular methods](https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/methodologies/comparisonofposttabularstatisticaldisclosurecontrolmethods): frequency-table risk/utility context; our results do not replicate its study.
 - [SDC Handbook](https://sdctools.github.io/HandbookSDC/04-magnitude-tabular-data.html): magnitude-table concepts and disclosure-control background.
-

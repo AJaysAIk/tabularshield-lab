@@ -161,29 +161,29 @@ body{font:16px/1.65 system-ui,sans-serif;background:#f4f6fa;color:#172033;margin
       <td>0.91667</td>
     </tr>
   </tbody>
-</table></div></section><section class="card"><h2>Full findings and assumptions</h2><p># TabularShield Lab — research report</p>
-<p>## Question and scope
-Can independently implemented magnitude-table protection methods preserve useful totals while reducing selected disclosure indicators? This is an AI-assisted public-data prototype, not a certified release system or a production integration.</p>
-<p>## Recorded experiment
+</table></div></section><section class="card"><h2>Full findings and assumptions</h2><h2>TabularShield Lab — research report</h2>
+<h3>Question and scope
+Can independently implemented magnitude-table protection methods preserve useful totals while reducing selected disclosure indicators? This is an AI-assisted public-data prototype, not a certified release system or a production integration.</h3>
+<h3>Recorded experiment
 - 3 public datasets; 9 measure profiles.
 - 8,100 method/workload/seed evaluations, including scale ablations.
 - 30 paired key seeds in this run. Query families and parameters fixed in [protocol](../docs/protocol.json).
-- Numerical output SHA-256: `3122940b062fd8248f44172e611694b15dda7b6689e3010623a9adeed1b38191`.</p>
-<p>## Results at delta = 0.20
-Queries are macro-averaged within each dataset. WAPE is calculated on visible cells only. Coverage is separate so withholding is never rewarded as perfect accuracy. The risk proxy is the fraction of originally flagged cells whose published values remain within 5% of truth. It is **not** an estimated probability of re-identification. Empty risk denominators are N/A.</p>
-<p>## Adversarial checks
-**Exact margins:** In the recorded 3×6 wholesale table, 2 cells were initially flagged. An attacker using visible cells, nonnegativity and exact margins could reconstruct 2 primary cells exactly. Greedy complementary suppression added 5 suppressions; exactly recoverable primary cells afterward: 0. Margin withholding: False. This check is scoped to one two-dimensional table and the stated constraints, not arbitrary linked queries or background information.</p>
-<p>**Repeated identical queries:** Across 200 random noise realizations, increasing repetitions from 1 to 1,000 reduced fresh-noise averaging RMSE by 31.1×. Fixed-key RMSE stayed constant. Both use the same lookup-noise distribution and scale. Fixed keys address this averaging attack only; they do not establish general confidentiality.</p>
-<p>## Geographic strand
-110 occupied half-degree grid cells from real GeoNames GB settlement coordinates. The primary symmetric 4-neighbour graph yields residual Moran&#x27;s I = 0.0653, permutation p = 0.205 (199 permutations). Neighbour sensitivity k = 2/4/8 is recorded separately. These are exploratory diagnostics, without a multiple-testing claim. Point neighbours are not administrative polygon contiguity. Settlement populations can overlap and have mixed reference years; their sum is not a UK population estimate.</p>
-<p>## Interpretation and decisions
+- Numerical output SHA-256: <code>3122940b062fd8248f44172e611694b15dda7b6689e3010623a9adeed1b38191</code>.</h3>
+<h3>Results at delta = 0.20
+Queries are macro-averaged within each dataset. WAPE is calculated on visible cells only. Coverage is separate so withholding is never rewarded as perfect accuracy. The risk proxy is the fraction of originally flagged cells whose published values remain within 5% of truth. It is <strong>not</strong> an estimated probability of re-identification. Empty risk denominators are N/A.</h3>
+<h3>Adversarial checks
+<strong>Exact margins:</strong> In the recorded 3×6 wholesale table, 2 cells were initially flagged. An attacker using visible cells, nonnegativity and exact margins could reconstruct 2 primary cells exactly. Greedy complementary suppression added 5 suppressions; exactly recoverable primary cells afterward: 0. Margin withholding: False. This check is scoped to one two-dimensional table and the stated constraints, not arbitrary linked queries or background information.</h3>
+<p><strong>Repeated identical queries:</strong> Across 200 random noise realizations, increasing repetitions from 1 to 1,000 reduced fresh-noise averaging RMSE by 31.1×. Fixed-key RMSE stayed constant. Both use the same lookup-noise distribution and scale. Fixed keys address this averaging attack only; they do not establish general confidentiality.</p>
+<h3>Geographic strand
+110 occupied half-degree grid cells from real GeoNames GB settlement coordinates. The primary symmetric 4-neighbour graph yields residual Moran&#x27;s I = 0.0653, permutation p = 0.205 (199 permutations). Neighbour sensitivity k = 2/4/8 is recorded separately. These are exploratory diagnostics, without a multiple-testing claim. Point neighbours are not administrative polygon contiguity. Settlement populations can overlap and have mixed reference years; their sum is not a UK population estimate.</h3>
+<h3>Interpretation and decisions
 1. Suppression must be assessed with its publication coverage and margin constraints. A low direct risk proxy can coexist with exact reconstruction.
 2. A public fixed key is suitable for reproducibility, not confidential deployment. A production key and release lifecycle need separate security design.
 3. Capping trades reduced dominance for downward distortion. Compare the paired capping ablation rather than assuming it is beneficial.
 4. Increasing perturbation changes the utility/risk proxy trade-off. No setting is called universally optimal or privacy-safe.
-5. Integration evidence is a bounded read-only API demonstration. Actual Cantabular integration, calibrated disclosure policy and independent domain review remain future work.</p>
-<p>## Uncertainty
-The 95% t intervals describe variability across key seeds on fixed datasets and fixed queries. They are not population confidence intervals. Deterministic methods have zero seed variability. Queries share records and are not independent replicates. See [paired contrasts](paired_comparisons.csv), [raw evaluations](experiment_results.csv), [limitations](../docs/limitations.md) and [data profiles](data_profiles.csv).</p>
-<p>## Reproduce and review
-Run the README commands, then `python scripts/verify_reproduction.py`. All source-data transformations, digests, tests and failure assumptions are available for inspection. No claims about user mastery, client delivery, agency experience or peer review are inferred from these results.
-</p></section><footer>Ajay Sai Kummara · AI-assisted implementation · Licence and source attribution are in the repository. This report contains no external scripts, trackers or remote resources.</footer></main><script>document.getElementById('dataset').addEventListener('change',function(){document.querySelectorAll('table.results tbody tr').forEach(row=>{row.hidden=this.value!=='all'&&row.cells[0].textContent.trim()!==this.value})});</script></body></html>
+5. Integration evidence is a bounded read-only API demonstration. Actual Cantabular integration, calibrated disclosure policy and independent domain review remain future work.</h3>
+<h3>Uncertainty
+The 95% t intervals describe variability across key seeds on fixed datasets and fixed queries. They are not population confidence intervals. Deterministic methods have zero seed variability. Queries share records and are not independent replicates. See [paired contrasts](paired_comparisons.csv), [raw evaluations](experiment_results.csv), [limitations](../docs/limitations.md) and [data profiles](data_profiles.csv).</h3>
+<h3>Reproduce and review
+Run the README commands, then <code>python scripts/verify_reproduction.py</code>. All source-data transformations, digests, tests and failure assumptions are available for inspection. No claims about user mastery, client delivery, agency experience or peer review are inferred from these results.
+</h3></section><footer>Ajay Sai Kummara · AI-assisted implementation · Licence and source attribution are in the repository. This report contains no external scripts, trackers or remote resources.</footer></main><script>document.getElementById('dataset').addEventListener('change',function(){document.querySelectorAll('table.results tbody tr').forEach(row=>{row.hidden=this.value!=='all'&&row.cells[0].textContent.trim()!==this.value})});</script></body></html>

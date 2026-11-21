@@ -4,6 +4,7 @@ import base64
 import html
 import json
 import os
+import re
 from pathlib import Path
 
 os.environ.setdefault("MPLCONFIGDIR", "/tmp/tabularshield-mpl")
@@ -209,10 +210,30 @@ Run the README commands, then `python scripts/verify_reproduction.py`. All sourc
             f'<figure><img alt="{name.replace("_", " ")}" src="data:image/png;base64,{encoded}"></figure>'
         )
     data_table = table.to_html(index=False, classes="results", float_format=lambda x: f"{x:.5f}")
+
     # Locally generated trusted text; escape before embedding, never execute report input.
-    rendered = "\n".join(
-        f"<p>{html.escape(p)}</p>" for p in narrative.split("\n\n") if not p.startswith("|")
-    )
+    def inline(text):
+        safe = html.escape(text)
+        safe = re.sub(r"\*\*(.+?)\*\*", r"<strong>\1</strong>", safe)
+        return re.sub(r"`([^`]+)`", r"<code>\1</code>", safe)
+
+    paragraphs = []
+    for paragraph in narrative.split("\n\n"):
+        if paragraph.startswith("|"):
+            continue
+        if paragraph.startswith("## "):
+            paragraphs.append(f"<h3>{inline(paragraph[3:])}</h3>")
+        elif paragraph.startswith("# "):
+            paragraphs.append(f"<h2>{inline(paragraph[2:])}</h2>")
+        elif paragraph.startswith("- "):
+            paragraphs.append(
+                "<ul>"
+                + "".join(f"<li>{inline(line[2:])}</li>" for line in paragraph.splitlines())
+                + "</ul>"
+            )
+        else:
+            paragraphs.append(f"<p>{inline(paragraph)}</p>")
+    rendered = "\n".join(paragraphs)
     document = f"""<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>TabularShield — evidence and trade-offs</title><style>
 body{{font:16px/1.65 system-ui,sans-serif;background:#f4f6fa;color:#172033;margin:0}}main{{max-width:1120px;margin:auto;padding:42px 24px}}h1{{font-size:44px;line-height:1.1}}.tag{{color:#5460b4;font-weight:700;letter-spacing:.1em;font-size:12px}}.card,figure{{background:white;border:1px solid #dce2ed;border-radius:16px;padding:24px;margin:24px 0}}img{{max-width:100%;height:auto}}table{{border-collapse:collapse;width:100%;font-size:13px}}td,th{{border-bottom:1px solid #e2e7f0;padding:9px;text-align:left}}select{{padding:10px;font:inherit;border-radius:8px}}.scroll{{overflow:auto}}p{{white-space:pre-wrap;overflow-wrap:anywhere}}footer{{color:#5b677e;font-size:13px}}a{{color:#2549b4}}</style></head><body><main>
 <div class="tag">PUBLIC DATA · REPRODUCIBLE RESEARCH · SOFTWARE EVIDENCE</div><h1>Useful statistics.<br>Measurable trade-offs.</h1><p>TabularShield Lab — magnitude-table protection, attack evaluation and geographic diagnostics.</p>

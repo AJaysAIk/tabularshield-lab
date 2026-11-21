@@ -43,4 +43,3 @@ If a £4,000 development budget is available, a starting proposal could reserve 
 ## Training artifact
 
 Use the learning guide for a 45-minute walkthrough: purpose and threat model (10 min), run a query (10), recover a suppressed value (10), compare utility (10), explain limitations and ask for a repeat demonstration (5). This is a prepared lesson plan; delivery and participant competence would need separate evidence.
-

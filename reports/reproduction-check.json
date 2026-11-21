@@ -1,0 +1,22 @@
+{
+  "status": "passed",
+  "seeds": 30,
+  "files_verified": [
+    "experiment_results.csv",
+    "summary.csv",
+    "data_profiles.csv",
+    "paired_comparisons.csv",
+    "spatial_cells.csv",
+    "averaging_attack.csv",
+    "reconstruction.json",
+    "spatial_diagnostics.json"
+  ],
+  "reference_sha256": "3122940b062fd8248f44172e611694b15dda7b6689e3010623a9adeed1b38191",
+  "rerun_sha256": "3122940b062fd8248f44172e611694b15dda7b6689e3010623a9adeed1b38191",
+  "timing_excluded": true,
+  "numeric_tolerance": {
+    "relative": 1e-10,
+    "absolute": 1e-10
+  },
+  "discrete_values": "exact comparison"
+}

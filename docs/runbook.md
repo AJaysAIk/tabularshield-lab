@@ -23,4 +23,3 @@ Confirm dataset attribution and checksums; run verification; inspect all negativ
 
 ## Source refresh
 `scripts/prepare_data.py` is an explicit refresh step. The GeoNames upstream archive changes. Ordinary reproduction uses the committed processed CSVs. Retain the previous snapshot and results when comparing versions. No data-refresh command is run by the public API.
-

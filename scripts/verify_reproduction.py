@@ -10,6 +10,7 @@ import pandas as pd
 
 from tabularshield.data import ROOT
 from tabularshield.experiment import run
+from tabularshield.verification import compare_nested
 
 reference = json.loads((ROOT / "reports/run_manifest.json").read_text())
 with tempfile.TemporaryDirectory(prefix="tabularshield-reproduction-") as temporary:
@@ -29,8 +30,10 @@ with tempfile.TemporaryDirectory(prefix="tabularshield-reproduction-") as tempor
         pd.testing.assert_frame_equal(expected_frame, actual_frame, rtol=1e-10, atol=1e-10)
         verified.append(filename)
     for filename in ["reconstruction.json", "spatial_diagnostics.json"]:
-        assert json.loads((ROOT / "reports" / filename).read_text()) == json.loads(
-            (path / filename).read_text()
+        compare_nested(
+            json.loads((ROOT / "reports" / filename).read_text()),
+            json.loads((path / filename).read_text()),
+            path=filename,
         )
         verified.append(filename)
     assert actual["dataset_sha256"] == reference["dataset_sha256"]
@@ -42,6 +45,8 @@ with tempfile.TemporaryDirectory(prefix="tabularshield-reproduction-") as tempor
         "reference_sha256": reference["results_sha256"],
         "rerun_sha256": hashlib.sha256((path / "experiment_results.csv").read_bytes()).hexdigest(),
         "timing_excluded": True,
+        "numeric_tolerance": {"relative": 1e-10, "absolute": 1e-10},
+        "discrete_values": "exact comparison",
     }
 (ROOT / "reports/reproduction-check.json").write_text(json.dumps(record, indent=2) + "\n")
 print(json.dumps(record, indent=2))

@@ -19,4 +19,3 @@ Tests target mathematical behavior and plausible failures, not just examples of 
 Run `pytest --cov=tabularshield --cov-report=term-missing`. Coverage is diagnostic, not an objective to inflate by testing trivial lines. The CI matrix checks Python 3.12 and 3.14. No confidential-data safety claim follows from a green build.
 
 Future checks before production include independent statistical review, multi-table attack suites, background-knowledge assumptions, load tests, controlled data refresh, authorized security testing and integration with the actual host's contracts.
-
