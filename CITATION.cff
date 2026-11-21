@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+message: "If you use this research software, cite the repository and separately credit the original datasets."
+title: "TabularShield Lab: Public-data magnitude-table disclosure-control experiments"
+type: software
+authors:
+  - family-names: Kummara
+    given-names: Ajay Sai
+version: 0.1.0
+license: MIT
+repository-code: "https://github.com/AJaysAIk/tabularshield-lab"
+abstract: "Independent AI-assisted research prototype comparing magnitude-table release methods, selected attacks and geographic diagnostics. No privacy certification or platform affiliation."
+

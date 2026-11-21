@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "status": "design fixed before inspecting comparative results; not an external preregistration",
+  "question": "How do magnitude-table release methods trade publication coverage, numerical usefulness and selected disclosure indicators?",
+  "datasets": ["wholesale", "abalone", "geonames_gb"],
+  "workload_source": "data/manifest.json; all listed measures crossed with the listed query families",
+  "main_delta": 0.2,
+  "delta_ablation": [0.05, 0.1, 0.2, 0.4],
+  "cap_quantile": 0.95,
+  "minimum_contributors": 5,
+  "top_two_dominance_threshold": 0.85,
+  "near_truth_relative_tolerance": 0.05,
+  "key_seeds": {"start": 0, "stop_exclusive": 30},
+  "methods": ["raw", "primary_suppression", "rounding", "winsor_only", "iid_noise", "keyed_noise", "winsor_keyed"],
+  "rounding_base": "10% of the dataset measure median; lower bound 1e-6",
+  "averaging_attack": {"repetitions": [1, 10, 100, 1000], "trials": 200, "rng_seed": 1776},
+  "reconstruction": {"dataset": "wholesale", "measure": "Delicassen", "rows": "Region", "columns": "Channel crossed with spend_band", "minimum_interval_width_relative_to_true_total": 0.2},
+  "spatial": {"grid_degrees": 0.5, "primary_k": 4, "sensitivity_k": [2, 4, 8], "permutations": 199, "permutation_seed": 909},
+  "uncertainty": "95% t intervals over seed-level workload means, not over cells or population samples",
+  "reporting": "All fixed workloads, all comparator results, undefined denominators as N/A, suppression coverage separate from visible error. No selection of a universal best method."
+}
+

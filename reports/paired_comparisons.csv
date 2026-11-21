@@ -1,0 +1,7 @@
+dataset,metric,contrast,mean_difference,ci_low,ci_high,paired_seeds
+abalone,wape_visible,winsor_keyed minus keyed_noise,0.016523512105464412,0.016497193255603355,0.01654983095532547,30
+abalone,sensitive_near_truth_rate,winsor_keyed minus keyed_noise,0.0,0.0,0.0,30
+geonames_gb,wape_visible,winsor_keyed minus keyed_noise,0.24007899781719227,0.23738225704981583,0.24277573858456872,30
+geonames_gb,sensitive_near_truth_rate,winsor_keyed minus keyed_noise,-0.01211640211640212,-0.019704049741403225,-0.0045287544914010165,30
+wholesale,wape_visible,winsor_keyed minus keyed_noise,0.10125291136365244,0.10094217074473298,0.1015636519825719,30
+wholesale,sensitive_near_truth_rate,winsor_keyed minus keyed_noise,7.401486830834377e-18,-0.025841409839506387,0.0258414098395064,30

@@ -1,0 +1,30 @@
+{
+  "seeds": 30,
+  "query_workloads": 27,
+  "methods": [
+    "raw",
+    "primary_suppression",
+    "rounding",
+    "winsor_only",
+    "iid_noise",
+    "keyed_noise",
+    "winsor_keyed"
+  ],
+  "delta_grid": [
+    0.05,
+    0.1,
+    0.2,
+    0.4
+  ],
+  "experiment_rows": 8100,
+  "public_records": 5483,
+  "dataset_sha256": {
+    "wholesale": "57a0fed4fbacd22fe92bd28b4587d0a01b149d838c004b0df1ef5164721bf22c",
+    "abalone": "66cc5e5dcb12ac4f508a0628df0393812f5c15b3659d550d8307688ac96083c9",
+    "geonames_gb": "d8959261208c735daa043ee8921dcbbbc82c25f25afada65dc58d7ae68c0a1eb"
+  },
+  "results_sha256": "3122940b062fd8248f44172e611694b15dda7b6689e3010623a9adeed1b38191",
+  "python": "3.14.3",
+  "uncertainty": "95% t intervals across key seeds; fixed datasets and queries",
+  "scope": "Independent AI-assisted research prototype; no privacy certification, client work, or affiliation."
+}

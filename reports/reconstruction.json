@@ -1,0 +1,201 @@
+{
+  "dataset": "wholesale",
+  "measure": "Delicassen",
+  "shape": [
+    3,
+    6
+  ],
+  "threat": "attacker knows unsuppressed cells, exact row/column margins and nonnegativity",
+  "primary_cells": 2,
+  "exactly_reconstructable_before": 2,
+  "exactly_reconstructable_after": 0,
+  "additional_suppressions": 5,
+  "margins_withheld": false,
+  "target_interval_width_fraction": 0.2,
+  "truth": [
+    [
+      35246.0,
+      11336.0,
+      24050.0,
+      1553.0,
+      20519.0,
+      11623.0
+    ],
+    [
+      14860.0,
+      6578.0,
+      9527.0,
+      7630.0,
+      8432.0,
+      7479.0
+    ],
+    [
+      175884.0,
+      61285.0,
+      83189.0,
+      74702.0,
+      63593.0,
+      53457.0
+    ]
+  ],
+  "primary_mask": [
+    [
+      false,
+      false,
+      false,
+      true,
+      false,
+      false
+    ],
+    [
+      false,
+      false,
+      false,
+      true,
+      false,
+      false
+    ],
+    [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ]
+  ],
+  "primary_intervals": {
+    "lower": [
+      [
+        35246.0,
+        11336.0,
+        24050.0,
+        1553.0,
+        20519.0,
+        11623.0
+      ],
+      [
+        14860.0,
+        6578.0,
+        9527.0,
+        7630.0,
+        8432.0,
+        7479.0
+      ],
+      [
+        175884.0,
+        61285.0,
+        83189.0,
+        74702.0,
+        63593.0,
+        53457.0
+      ]
+    ],
+    "upper": [
+      [
+        35246.0,
+        11336.0,
+        24050.0,
+        1553.0,
+        20519.0,
+        11623.0
+      ],
+      [
+        14860.0,
+        6578.0,
+        9527.0,
+        7630.0,
+        8432.0,
+        7479.0
+      ],
+      [
+        175884.0,
+        61285.0,
+        83189.0,
+        74702.0,
+        63593.0,
+        53457.0
+      ]
+    ]
+  },
+  "final_mask": [
+    [
+      false,
+      true,
+      false,
+      true,
+      false,
+      false
+    ],
+    [
+      false,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ]
+  ],
+  "final_intervals": {
+    "lower": [
+      [
+        35246.0,
+        3706.0,
+        24050.0,
+        0.0,
+        20519.0,
+        11623.0
+      ],
+      [
+        14860.0,
+        5025.0,
+        9527.0,
+        0.0,
+        8432.0,
+        7479.0
+      ],
+      [
+        175884.0,
+        61285.0,
+        83189.0,
+        74702.0,
+        63593.0,
+        53457.0
+      ]
+    ],
+    "upper": [
+      [
+        35246.0,
+        12889.0,
+        24050.0,
+        9183.0,
+        20519.0,
+        11623.0
+      ],
+      [
+        14860.0,
+        14208.0,
+        9527.0,
+        9183.0,
+        8432.0,
+        7479.0
+      ],
+      [
+        175884.0,
+        61285.0,
+        83189.0,
+        74702.0,
+        63593.0,
+        53457.0
+      ]
+    ]
+  }
+}

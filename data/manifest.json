@@ -1,0 +1,116 @@
+{
+  "wholesale": {
+    "source": "https://archive.ics.uci.edu/dataset/292/wholesale+customers",
+    "download": "https://archive.ics.uci.edu/static/public/292/wholesale%2Bcustomers.zip",
+    "citation": "Cardoso, M. (2013). Wholesale customers. UCI. DOI:10.24432/C5030X.",
+    "unit": "one distributor customer; amounts in source monetary units, not assumed GBP",
+    "transformations": "Stable row-position IDs; fixed Fresh spend bands; no row removal or outlier trimming.",
+    "measures": [
+      "Fresh",
+      "Milk",
+      "Grocery",
+      "Frozen",
+      "Detergents_Paper",
+      "Delicassen"
+    ],
+    "dimensions": [
+      "Region",
+      "Channel",
+      "spend_band"
+    ],
+    "workloads": [
+      [
+        "Region"
+      ],
+      [
+        "Region",
+        "Channel"
+      ],
+      [
+        "Region",
+        "Channel",
+        "spend_band"
+      ]
+    ],
+    "archive": "wholesale.zip",
+    "filename": "wholesale.csv",
+    "rows": 440,
+    "license": "CC BY 4.0",
+    "sha256": "57a0fed4fbacd22fe92bd28b4587d0a01b149d838c004b0df1ef5164721bf22c",
+    "archive_sha256": "647e6a61683ed23f48c7b04e1e2be78835eca8758b32267603fc42a1479dbfb8",
+    "prepared_utc": "2026-11-21T22:55:52.746406+00:00"
+  },
+  "abalone": {
+    "source": "https://archive.ics.uci.edu/dataset/1/abalone",
+    "download": "https://archive.ics.uci.edu/static/public/1/abalone.zip",
+    "citation": "Nash, W., Sellers, T., Talbot, S., Cawthorn, A., & Ford, W. (1994). Abalone. UCI. DOI:10.24432/C55C7W.",
+    "unit": "one abalone specimen; weights retained on source scale",
+    "transformations": "Stable row-position IDs; fixed ring/length bands; no imputation or row removal.",
+    "measures": [
+      "Whole_weight",
+      "Shell_weight"
+    ],
+    "dimensions": [
+      "Sex",
+      "ring_band",
+      "length_band"
+    ],
+    "workloads": [
+      [
+        "Sex"
+      ],
+      [
+        "Sex",
+        "ring_band"
+      ],
+      [
+        "Sex",
+        "ring_band",
+        "length_band"
+      ]
+    ],
+    "archive": "abalone.zip",
+    "filename": "abalone.csv",
+    "rows": 4177,
+    "license": "CC BY 4.0",
+    "sha256": "66cc5e5dcb12ac4f508a0628df0393812f5c15b3659d550d8307688ac96083c9",
+    "archive_sha256": "755a6a67c5b266961a3f149ea13be2cfb6e6c727e48cee3c83bc0b4526210ee4",
+    "prepared_utc": "2026-11-21T22:55:52.747766+00:00"
+  },
+  "geonames_gb": {
+    "source": "https://download.geonames.org/export/dump/",
+    "download": "https://download.geonames.org/export/dump/cities15000.zip",
+    "citation": "GeoNames geographical database, downloaded snapshot; CC BY 4.0. https://www.geonames.org/about.html",
+    "unit": "one listed populated place, NOT a person or household; populations can overlap and have different reference dates",
+    "transformations": "GB, feature class P, reported population >=15,000; sort by geoname ID; fixed 0.5-degree grid bins.",
+    "measures": [
+      "population"
+    ],
+    "dimensions": [
+      "admin1",
+      "lat_band",
+      "lon_band"
+    ],
+    "workloads": [
+      [
+        "admin1"
+      ],
+      [
+        "lat_band",
+        "lon_band"
+      ],
+      [
+        "admin1",
+        "lat_band",
+        "lon_band"
+      ]
+    ],
+    "archive": "cities15000.zip",
+    "filename": "geonames_gb.csv",
+    "rows": 866,
+    "license": "CC BY 4.0",
+    "sha256": "d8959261208c735daa043ee8921dcbbbc82c25f25afada65dc58d7ae68c0a1eb",
+    "archive_sha256": "df53bb7aade75a0fa2160a98405e5e1d014fe4c6f4b0db1d6078b9fd7b50486b",
+    "prepared_utc": "2026-11-21T22:55:52.750973+00:00"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "cells": 110,
+  "unit": "reported settlement population aggregates; not household disclosure risk",
+  "graph": "symmetric binary nearest-neighbour graph on great-circle ordering",
+  "primary_k": 4,
+  "moran_i": 0.06529107495406021,
+  "p_two_sided": 0.205,
+  "permutations": 199,
+  "sensitivity": [
+    {
+      "k": 2,
+      "moran_i": 0.030909355346717578,
+      "p_two_sided": 0.63,
+      "permutations": 199
+    },
+    {
+      "k": 4,
+      "moran_i": 0.06529107495406021,
+      "p_two_sided": 0.205,
+      "permutations": 199
+    },
+    {
+      "k": 8,
+      "moran_i": 0.05326527511531382,
+      "p_two_sided": 0.11,
+      "permutations": 199
+    }
+  ],
+  "interpretation": "Exploratory residual-pattern diagnostic; no spatial privacy guarantee or population inference."
+}
