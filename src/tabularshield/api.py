@@ -4,10 +4,11 @@ import hashlib
 from functools import lru_cache
 
 from fastapi import FastAPI, HTTPException
+from fastapi.responses import FileResponse
 from pydantic import BaseModel, ConfigDict, Field
 
 from .core import Policy, aggregate, release
-from .data import load_dataset
+from .data import ROOT, load_dataset
 
 app = FastAPI(
     title="TabularShield public-data demo",
@@ -21,6 +22,11 @@ class Query(BaseModel):
     dataset: str
     measure: str
     group_by: list[str] = Field(min_length=1, max_length=3)
+
+
+@app.get("/", include_in_schema=False)
+def research_report():
+    return FileResponse(ROOT / "reports/report.html", media_type="text/html")
 
 
 @lru_cache(maxsize=3)

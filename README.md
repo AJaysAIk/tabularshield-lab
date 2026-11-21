@@ -69,6 +69,10 @@ curl -X POST http://127.0.0.1:8000/query \
 
 The API returns perturbed sums only, with no exact counts, truth, contributor maxima or key material. It deliberately does not accept uploads, arbitrary SQL, user-selected seeds or unbounded filters. Fixed-key consistency alone **does not** solve composition or reconstruction across linked releases.
 
+### Deploy on Vercel
+
+The repository specifies `src.tabularshield.api:app` in `[tool.vercel]` so Vercel can find the application in the source layout. Connect the repository with the project root set to this directory and the FastAPI framework preset. The homepage serves the recorded research report; `/docs` exposes the interactive API, and `/health` checks the running app. Keep the committed `data/processed`, `data/manifest.json` and `reports/report.html` in the function bundle. The deployment test imports the configured app from an isolated copy and exercises all three public datasets without relying on the development checkout.
+
 ## Methods
 
 `raw`, `primary_suppression`, `rounding`, `winsor_only`, `iid_noise`, `keyed_noise`, `winsor_keyed`.
