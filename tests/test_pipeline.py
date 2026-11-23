@@ -34,7 +34,17 @@ def test_end_to_end_research_pipeline_and_report(tmp_path):
     assert "<select" in document
     assert "<script src=" not in document
     assert "2 paired key seeds in this run" in (tmp_path / "RESEARCH_REPORT.md").read_text()
-    assert len(list((tmp_path / "figures").glob("*.png"))) == 4
+    assert len(list((tmp_path / "figures").glob("*.png"))) == 5
+    decision = json.loads((tmp_path / "release_decision.json").read_text())
+    assert decision["visible_cells_before"] == 16
+    assert decision["visible_cells_after"] == 11
+    assert decision["total_cells"] == 18
+    assert np.isclose(decision["coverage_loss_percentage_points"], 100 * 5 / 18)
+    assert decision["exactly_reconstructable_after"] == 0
+    assert not decision["margins_withheld"]
+    note = (tmp_path / "RELEASE_DECISION_NOTE.md").read_text()
+    assert "88.9%" in note and "61.1%" in note
+    assert "linked tables" in note
 
 
 def test_committed_reference_has_complete_workload():
