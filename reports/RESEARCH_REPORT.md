@@ -1,7 +1,7 @@
 # TabularShield Lab — research report
 
 ## Question and scope
-Can independently implemented magnitude-table protection methods preserve useful totals while reducing selected disclosure indicators? This is an AI-assisted public-data prototype, not a certified release system or a production integration.
+Can magnitude-table protection methods preserve useful totals while reducing selected disclosure indicators? This research prototype compares methods using public data.
 
 ## Recorded experiment
 - 3 public datasets; 9 measure profiles.
@@ -40,6 +40,9 @@ Queries are macro-averaged within each dataset. WAPE is calculated on visible ce
 **Exact margins:** In the recorded 3×6 wholesale table, 2 cells were initially flagged. An attacker using visible cells, nonnegativity and exact margins could reconstruct 2 primary cells exactly. Greedy complementary suppression added 5 suppressions; exactly recoverable primary cells afterward: 0. Margin withholding: False. This check is scoped to one two-dimensional table and the stated constraints, not arbitrary linked queries or background information.
 
 **Repeated identical queries:** Across 200 random noise realizations, increasing repetitions from 1 to 1,000 reduced fresh-noise averaging RMSE by 31.1×. Fixed-key RMSE stayed constant. Both use the same lookup-noise distribution and scale. Fixed keys address this averaging attack only; they do not establish general confidentiality.
+
+## What a release user gains and loses
+Additional suppression prevents exact recovery of the 2 flagged cells under the tested constraints. It reduces available cell values from 16/18 (88.9%) to 11/18 (61.1%). Users lose 5 detailed values, or 27.8 percentage points of coverage, while row and column totals remain available. Compare this cost with the distortion introduced by perturbation before choosing a release method. The repository includes a release decision note with review questions and the underlying calculation.
 
 ## Geographic strand
 110 occupied half-degree grid cells from real GeoNames GB settlement coordinates. The primary symmetric 4-neighbour graph yields residual Moran's I = 0.0653, permutation p = 0.205 (199 permutations). Neighbour sensitivity k = 2/4/8 is recorded separately. These are exploratory diagnostics, without a multiple-testing claim. Point neighbours are not administrative polygon contiguity. Settlement populations can overlap and have mixed reference years; their sum is not a UK population estimate.

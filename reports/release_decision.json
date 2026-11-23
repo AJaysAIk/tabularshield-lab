@@ -1,0 +1,16 @@
+{
+  "dataset": "wholesale",
+  "measure": "Delicassen",
+  "total_cells": 18,
+  "primary_cells": 2,
+  "additional_suppressions": 5,
+  "visible_cells_before": 16,
+  "visible_cells_after": 11,
+  "coverage_before": 0.8888888888888888,
+  "coverage_after": 0.6111111111111112,
+  "coverage_loss_percentage_points": 27.77777777777778,
+  "exactly_reconstructable_before": 2,
+  "exactly_reconstructable_after": 0,
+  "margins_withheld": false,
+  "scope": "One recorded table; visible cells, exact margins and nonnegativity"
+}
